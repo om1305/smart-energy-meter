@@ -21,7 +21,7 @@ router.post("/login", [
   body("email").isEmail().normalizeEmail().withMessage("Please provide a valid email"),
   body("password").exists().withMessage("Password is required")
 ], loginUser);
-
+  
 // @route   GET /api/users/:id
 // @desc    Get user profile
 // @access  Private

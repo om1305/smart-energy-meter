@@ -1,6 +1,6 @@
 ﻿const express = require("express");
 const { body } = require("express-validator");
-const { addEnergyReading, getEnergyReadings } = require("../controllers/energyController");
+const { addEnergyReading, getEnergyReadings , getEnergyInsights ,getEnergyHistory, getEnergyTrends} = require("../controllers/energyController");
 const auth = require("../middleware/auth");
 
 const router = express.Router();
@@ -18,6 +18,10 @@ router.post("/add", [
 // @route   GET /api/energy/:deviceId
 // @desc    Get energy readings for a device
 // @access  Private
-router.get("/:deviceId", auth, getEnergyReadings);
 
+router.get("/trends", auth, getEnergyTrends);       // /api/energy/trends
+router.get("/history", auth, getEnergyHistory);     // /api/energy/history?deviceId=METER0005
+router.get("/insights", auth, getEnergyInsights);
+
+router.get("/:deviceId", auth, getEnergyReadings);
 module.exports = router;
