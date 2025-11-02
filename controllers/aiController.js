@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 const axios = require("axios");
 const EnergyReading = require("../models/EnergyReading");
 const Prediction = require("../models/Prediction");
