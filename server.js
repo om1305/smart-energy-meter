@@ -6,7 +6,6 @@ require("dotenv").config();
 
 const connectDB = require("./config/database");
 
-// Import routes
 const userRoutes = require("./routes/userRoutes");
 const deviceRoutes = require("./routes/deviceRoutes");
 const energyRoutes = require("./routes/energyRoutes");
@@ -15,7 +14,6 @@ const aiRoutes = require("./routes/aiRoutes");
 const chatbotRoutes = require("./routes/chatbotRoutes");
 const notificationRoutes = require("./routes/notificationRoutes");
 
-// Import middleware
 const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
